@@ -1,5 +1,3 @@
-# Makefiles
-
 There are several Makefiles that can assist in various aspects of debugging, building, deploying and managing the project in general.
 
 For detailed information on each Makefile, refer to the files themselves. The Makefiles are continuously evolving and are the best source of truth for their current state. 
