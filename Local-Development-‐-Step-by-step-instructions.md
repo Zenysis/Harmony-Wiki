@@ -1,0 +1,183 @@
+# Local Development - Step by step instructions
+
+> [!WARNING]  
+> These instructions go hand in hand with https://github.com/Zenysis/Harmony/tree/sybrand-clean-instructions ; you'll need to be on that branch for everything to work.
+
+## Assumptions
+
+- You're familiar with using terminal commands.
+- You're familiar with using git.
+- You have python version 3.9.18 (or thereabouts) installed.
+- You have node v18.17.1, npm 9.8.1 and yarn 1.22.19 (or thereabouts) installed.
+- You have Docker 24.0.6 (or thereabouts) installed.
+- You're using *nix.
+
+## Clone repository
+
+Clone the [Harmony repository](https://github.com/Zenysis/Harmony):
+```
+# using SSH
+git clone git@github.com:Zenysis/Harmony.git
+
+# change directory to the repository
+cd Harmony
+```
+
+## Prepare S3 compatible server
+
+> [!NOTE]
+> You can skip this step if you already have access to a S3 compatible server.
+
+> [!WARNING]  
+> TBD
+
+- Create a zenysis-harmony-demo bucket,
+
+## Prepare minio client
+
+1. Install the [minio](https://min.io/download) client.
+2. Create a s3 alias in your minio config
+3. Create a self_serve folder in the zenysis-harmony-demo bucket; thus you need s3/zenysis-harmony-demo/self_serve to exist.
+
+```
+# trick s3 into having a self_serve folder
+touch delete_me
+mc cp delete_me s3/zenysis-harmony-demo/self_serve/delete_me
+rm delete_me
+```
+> [!NOTE]
+> The pipeline should run without self_serve folder present, but following the steps above removes any confusing error logs that could distract you at this point in the setup.
+
+## Prepare druid
+
+> [!NOTE]  
+> You don't have to use a local druid server, but these instructions assume you do. If you're not running druid locally, you'll have to do a few things differently to get indexing to work.
+
+Create a shared folder for druid:
+```
+mkdir -p ~/home/share
+```
+Create `druid_setup/.env` **replacing variable where appropriate**:
+```
+SINGLE_SERVER_DOCKER_HOST=
+DRUID_SHARED_FOLDER=<druid shared folder, e.g. /Users/jimbo/home/share>
+DATA_OUTPUT_FOLDER=<data output folder, e.g. /Users/jimbo/data/output>
+```
+Start druid:
+```
+cd druid_setup
+make single_sever_up
+```
+You can see if druid is starting up ok by looking at the logs:
+```
+make single_server_logs
+```
+
+You should now be able to visit druid on http://localhost:8888/ (it can take a while to start up)
+
+## Prepare an environment file for web and pipeline
+
+Create an environment file `.env.harmony_demo` with the following contents **replacing variables where appropriate**
+
+```
+DEFAULT_SECRET_KEY=somesecret
+
+ZEN_ENV=harmony_demo
+
+DRUID_HOST=http://localhost
+HASURA_HOST=http://localhost:8088
+
+SQLALCHEMY_DATABASE_URI='postgresql://postgres:zenysis@localhost:5432/harmony_demo-local'
+
+POSTGRES_HOST=localhost
+
+# You can go to https://www.mapbox.com and create an API token.
+MAPBOX_ACCESS_TOKEN=<some mapbox access token>
+
+NOREPLY_EMAIL=noreply@<your domain here>
+SUPPORT_EMAIL=suppport@<your domain here>
+
+PYTHONPATH=<source folder, e.g. /Users/jimbo/Harmony>
+ZEN_HOME=<source folder, e.g. /Users/jimbo/Harmony>
+R77_SRC_ROOT=<source folder, e.g. /Users/jimbo/Harmony>
+MC_CONFIG=~/.mc
+
+POSTGRES_PASSWORD=postgres
+
+DRUID_SHARED_FOLDER=<druid shared folder, e.g. /Users/jimbo/home/share>
+DATA_OUTPUT_FOLDER=<data output folder, e.g. /Users/jimbo/data/output>
+```
+
+## Running un-containerised
+
+> [!NOTE]
+> From this point on, instructions assume you want to run the web serve and pipeline "natively" (that is, not dockerized) on your local machine.
+
+### Install python dependencies
+
+```
+python -m venv venv
+source ./venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt -r requirements-dev.txt -r requirements-web.txt -r requirements-pipeline.txt
+```
+
+### Install node dependencies
+
+```
+yarn install
+```
+
+### Run pipeline
+
+> [!NOTE]
+> As noted above, these instructions assume your running druid on your development machine.
+
+Run process, index and validate (the demo pipeline doesn't have a generate step)
+```
+set -o allexport                                                       
+source .env.harmony_demo   
+set +o allexport
+
+source ./venv/bin/activate
+
+./pipeline/harmony_demo/process/process_all
+
+./pipeline/harmony_demo/index/index_all
+
+./pipeline/harmony_demo/validate/validate_all                       
+```
+
+### Start web server
+
+Start webpack:
+```
+yarn webpack
+```
+
+In a separate terminal, start the flask server:
+```
+set -o allexport                                                       
+source .env.harmony_demo   
+set +o allexport
+
+source ./venv/bin/activate
+
+yarn server
+```
+
+You should now be able to browse to the login screen on http://localhost:5000/
+
+You can log in user the default user that is created in a development setup (user: `demo@zenysis.com` password: `zenysis` or create your own user:
+
+```
+set -o allexport                                                       
+source .env.harmony_demo   
+set +o allexport
+
+source ./venv/bin/activate
+
+./scripts/create_user.py --username <EMAIL ADDRESS> --first_name <FIRST NAME> --last_name <LAST NAME> --site_admin --password <PASSWORD>
+```
+
+
