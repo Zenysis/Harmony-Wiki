@@ -20,7 +20,7 @@
 > [!WARNING]  
 > TBD
 
-- Create a zenysis-harmony-demo bucket,
+- Create a zenysis-harmony-demo bucket
 
 ## Prepare minio client
 
