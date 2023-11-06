@@ -1,12 +1,13 @@
 # Local Development - Step by step instructions
 
-> [!WARNING]  
+> [!WARNING]
 > These instructions go hand in hand with https://github.com/Zenysis/Harmony/tree/sybrand-clean-instructions ; you'll need to be on that branch for everything to work.
 
 ## Assumptions
 
 - You're familiar with using terminal commands.
 - You're familiar with using git.
+- You're familiar with python development.
 - You have python version 3.9.18 (or thereabouts) installed.
 - You have node v18.17.1, npm 9.8.1 and yarn 1.22.19 (or thereabouts) installed.
 - You have Docker 24.0.6 (or thereabouts) installed.
@@ -114,6 +115,9 @@ DATA_OUTPUT_FOLDER=<data output folder, e.g. /Users/jimbo/data/output>
 > From this point on, instructions assume you want to run the web serve and pipeline "natively" (that is, not dockerized) on your local machine.
 
 ### Install python dependencies
+
+> [!WARNING]
+> Success in this section very much depends on your familiarity with working with Python. Successful installation of the dependencies relies on various pre-requisites being in place, depending on the environment you're using. (e.g. xcode command line tools on mac etc.). Instructions for configuring your particular environment falls outside the scope of this document.
 
 ```
 python -m venv venv
