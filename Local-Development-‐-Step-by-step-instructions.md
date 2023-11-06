@@ -132,6 +132,18 @@ python -m pip install -r requirements.txt -r requirements-dev.txt -r requirement
 yarn install
 ```
 
+### Prepare database
+
+```
+set -o allexport                                                       
+source .env.harmony_demo   
+set +o allexport
+
+source ./venv/bin/activate
+
+yarn init-db harmony_demo
+```
+
 ### Run pipeline
 
 > [!NOTE]
