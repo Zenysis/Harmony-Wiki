@@ -13,6 +13,17 @@
 - You have Docker 24.0.6 (or thereabouts) installed.
 - You're using *nix.
 
+## Clone repository
+
+Clone the [Harmony repository](https://github.com/Zenysis/Harmony):
+```
+# using SSH
+git clone git@github.com:Zenysis/Harmony.git
+
+# change directory to the repository
+cd Harmony
+```
+
 ## Prepare S3 compatible server
 
 > [!NOTE]
@@ -49,17 +60,6 @@ rm delete_me
 ```
 > [!NOTE]
 > The pipeline should run without self_serve folder present, but following the steps above removes any confusing error logs that could distract you at this point in the setup.
-
-## Clone repository
-
-Clone the [Harmony repository](https://github.com/Zenysis/Harmony):
-```
-# using SSH
-git clone git@github.com:Zenysis/Harmony.git
-
-# change directory to the repository
-cd Harmony
-```
 
 ## Prepare druid
 
