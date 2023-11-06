@@ -18,21 +18,33 @@
 > [!NOTE]
 > You can skip this step if you already have access to a S3 compatible server.
 
-> [!WARNING]  
-> TBD
-
-- Create a zenysis-harmony-demo bucket
+- Create `.env.minio` file
+```
+MINIO_DATA_FOLDER=<data folder, e.g. /Users/jimbo/minio>
+MINIO_ROOT_USER=<specify some user>
+MINIO_ROOT_PASSWORD=<specify some password>
+```
+- Start minio server
+```
+docker compose --env-file .env.minio -f docker-compose.minio.yaml up --detach
+```
+- Log into minio server http://localhost:9090/ using the configured root username and password.
+- Create a `zenysis-harmony-demo` bucket.
+- Create an access key (keep the access key and secret key somewhere safe, we'll be using it in the next step)
 
 ## Prepare minio client
 
-1. Install the [minio](https://min.io/download) client.
-2. Create a s3 alias in your minio config
-3. Create a self_serve folder in the zenysis-harmony-demo bucket; thus you need s3/zenysis-harmony-demo/self_serve to exist.
+- Install the [minio](https://min.io/download) client.
+- Create a `local` alias in your minio config.
+```
+mc alias set local http://localhost:9000 <ACCESS KEY> <SECRET_KEY>
+```
+- Create a self_serve folder in the zenysis-harmony-demo bucket; thus you need s3/zenysis-harmony-demo/self_serve to exist.
 
 ```
 # trick s3 into having a self_serve folder
 touch delete_me
-mc cp delete_me s3/zenysis-harmony-demo/self_serve/delete_me
+mc cp delete_me local/zenysis-harmony-demo/self_serve/delete_me
 rm delete_me
 ```
 > [!NOTE]
@@ -107,6 +119,9 @@ POSTGRES_PASSWORD=postgres
 
 DRUID_SHARED_FOLDER=<druid shared folder, e.g. /Users/jimbo/home/share>
 DATA_OUTPUT_FOLDER=<data output folder, e.g. /Users/jimbo/data/output>
+
+# Assuming you've created a minio alias called "local":
+OBJECT_STORAGE_ALIAS=local
 ```
 
 ## Running un-containerised
