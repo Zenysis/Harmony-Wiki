@@ -159,6 +159,9 @@ source ./venv/bin/activate
 yarn init-db harmony_demo
 ```
 
+> [!WARNING]
+> There is a known issue, where on first run, a failure may occur. If you re-run the command it should be fine.
+
 ### Run pipeline
 
 > [!NOTE]
