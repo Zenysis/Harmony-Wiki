@@ -157,7 +157,7 @@ set +o allexport
 
 source ./venv/bin/activate
 
-yarn init-db harmony_demo
+yarn init-db harmony_demo --populate_indicators_from_config
 ```
 
 > [!WARNING]
