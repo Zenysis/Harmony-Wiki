@@ -66,9 +66,10 @@ rm delete_me
 > [!NOTE]  
 > You don't have to use a local druid server, but these instructions assume you do. If you're not running druid locally, you'll have to do a few things differently to get indexing to work.
 
-Create a shared folder for druid:
+Create a shared &amp; data folder for druid:
 ```
 mkdir -p ~/home/share
+mkdir -p ~/home/data
 ```
 Create `druid_setup/.env` **replacing variable where appropriate**:
 ```
