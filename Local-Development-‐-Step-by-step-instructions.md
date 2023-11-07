@@ -69,7 +69,7 @@ rm delete_me
 Create a shared &amp; data folder for druid:
 ```
 mkdir -p ~/home/share
-mkdir -p ~/home/data
+mkdir -p ~/home/data/output
 ```
 Create `druid_setup/.env` **replacing variable where appropriate**:
 ```
