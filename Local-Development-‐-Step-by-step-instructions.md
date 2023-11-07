@@ -169,7 +169,7 @@ yarn init-db harmony_demo
 > As noted above, these instructions assume your running druid on your development machine.
 
 > [!WARNING]
-> The index step can be very slow, especially running intel druid images on mac silicon.
+> The index step can be very slow when running druid locally. In addition druid does not seem to run stable on mac silicon, and you may have to restart docker several times / adjust your settings depending on your hardware.
 
 Run process, index and validate (the demo pipeline doesn't have a generate step)
 ```
