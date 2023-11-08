@@ -80,7 +80,7 @@ DATA_OUTPUT_FOLDER=<data output folder, e.g. /Users/jimbo/data/output>
 Start druid:
 ```
 cd druid_setup
-make single_sever_up
+make single_server_up
 ```
 You can see if druid is starting up ok by looking at the logs:
 ```
