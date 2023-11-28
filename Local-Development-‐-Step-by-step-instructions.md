@@ -50,11 +50,11 @@ docker compose --env-file .env.minio -f docker-compose.minio.yaml up --detach
 ```
 mc alias set local http://localhost:9000 <ACCESS KEY> <SECRET_KEY>
 ```
-- Create a self_serve folder in the zenysis-harmony-demo bucket; thus you need s3/zenysis-harmony-demo/self_serve to exist.
+- Create a self_serve folder in the zenysis-harmony-demo bucket; thus you need local/zenysis-harmony-demo/self_serve to exist.
 
 ```
 # mb can be used to create a bucket or folder
-mc mb s3/zenysis-harmony-demo/self_serve
+mc mb local/zenysis-harmony-demo/self_serve
 ```
 > [!NOTE]
 > The pipeline should run without self_serve folder present, but following the steps above removes any confusing error logs that could distract you at this point in the setup.
