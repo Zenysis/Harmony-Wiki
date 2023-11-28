@@ -53,10 +53,8 @@ mc alias set local http://localhost:9000 <ACCESS KEY> <SECRET_KEY>
 - Create a self_serve folder in the zenysis-harmony-demo bucket; thus you need s3/zenysis-harmony-demo/self_serve to exist.
 
 ```
-# trick s3 into having a self_serve folder
-touch delete_me
-mc cp delete_me local/zenysis-harmony-demo/self_serve/delete_me
-rm delete_me
+# mb can be used to create a bucket or folder
+mc mb s3/zenysis-harmony-demo/self_serve
 ```
 > [!NOTE]
 > The pipeline should run without self_serve folder present, but following the steps above removes any confusing error logs that could distract you at this point in the setup.
