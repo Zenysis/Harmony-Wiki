@@ -181,6 +181,9 @@ source ./venv/bin/activate
 ./pipeline/harmony_demo/validate/validate_all                       
 ```
 
+> [!NOTE]
+> You can check up on druid indexing progress on the druid console at http://localhost:8081/
+
 ### Start web server
 
 Start webpack:
