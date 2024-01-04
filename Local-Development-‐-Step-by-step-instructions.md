@@ -213,7 +213,7 @@ You should now be able to browse to the login screen on http://localhost:5000/
 > ```
 > It's probably due to the `DEFAULT_SECRET_KEY` used by JWT having changed. You can resolve this by deleting cookies, or changing `DEFAULT_SECRET_KEY` to the correct value.
 
-You can log in user the default user that is created in a development setup (user: `demo@zenysis.com` password: `zenysis` or create your own user:
+You can log in user the default user that is created in a development setup (user: `demo@zenysis.com` password: `zenysis`) or create your own user:
 
 ```
 set -o allexport                                                       
