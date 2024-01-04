@@ -1,8 +1,5 @@
 # Local Development - Step by step instructions
 
-> [!WARNING]
-> These instructions go hand in hand with https://github.com/Zenysis/Harmony/tree/sybrand-clean-instructions ; you'll need to be on that branch for everything to work.
-
 ## Assumptions
 
 - You're familiar with using terminal commands.
