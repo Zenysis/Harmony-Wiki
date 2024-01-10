@@ -10,6 +10,14 @@
 - You have Docker 24.0.6 (or thereabouts) installed.
 - You're using *nix.
 
+### Ports used
+
+_The following ports need to be available for local development:_
+
+5000: used by web server (can be problematic on MacOS - as port 5000 is in use by default)
+5432: used by postgres
+8080: used by hasura
+
 ## Clone repository
 
 Clone the [Harmony repository](https://github.com/Zenysis/Harmony):
