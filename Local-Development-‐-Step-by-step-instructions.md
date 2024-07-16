@@ -74,6 +74,9 @@ Create a shared &amp; data folder for druid:
 mkdir -p ~/home/share
 mkdir -p ~/data/output
 ```
+
+### Running druid in a container
+
 Create `druid_setup/.env` **replacing variable where appropriate**:
 ```
 SINGLE_SERVER_DOCKER_HOST=
@@ -91,6 +94,20 @@ make single_server_logs
 ```
 
 You should now be able to visit druid on http://localhost:8888/ (it can take a while to start up)
+
+### Running druid on bare metal
+
+Download the most recent supported version of Druid. Refer to the Zenysis druid extensions (https://github.com/Zenysis/druid-arbitrary-granularity, https://github.com/Zenysis/druid-nested-json-parser, https://github.com/Zenysis/druid-aggregatable-first-last and https://github.com/Zenysis/druid-tuple-sketch-expansion) to establish the most recently supported version. The `dist` folder in each repository will contain jar files that match the supported version of Druid.
+
+Follow the instructions on https://druid.apache.org/docs/latest/tutorials/ to get the druid server running.
+
+Install the Zensys druid extensions following the instructs for each extension in turn:
+https://github.com/Zenysis/druid-tuple-sketch-expansion?tab=readme-ov-file#installation
+https://github.com/Zenysis/druid-arbitrary-granularity?tab=readme-ov-file#installation
+https://github.com/Zenysis/druid-aggregatable-first-last?tab=readme-ov-file#installation
+https://github.com/Zenysis/druid-nested-json-parser?tab=readme-ov-file#installation
+
+You should now be able to visit druid on http://localhost:8888/
 
 ## Prepare an environment file for web and pipeline
 
