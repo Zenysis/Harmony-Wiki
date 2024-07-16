@@ -97,17 +97,22 @@ You should now be able to visit druid on http://localhost:8888/ (it can take a w
 
 ### Running druid on bare metal
 
-Download the most recent supported version of Druid. Refer to the Zenysis druid extensions (https://github.com/Zenysis/druid-arbitrary-granularity, https://github.com/Zenysis/druid-nested-json-parser, https://github.com/Zenysis/druid-aggregatable-first-last and https://github.com/Zenysis/druid-tuple-sketch-expansion) to establish the most recently supported version. The `dist` folder in each repository will contain jar files that match the supported version of Druid.
+Download the most recent supported version of Druid. Refer to the dist folder in the Zenysis druid extensions to establish the most recently supported version. The `dist` folder in each repository will contain jar files that match the supported version of Druid.
+
+- [druid-arbitrary-granularity - dist](https://github.com/Zenysis/druid-arbitrary-granularity/tree/master/dist)
+- [druid-nested-json-parser](https://github.com/Zenysis/druid-nested-json-parser/tree/master/dist)
+- [druid-aggregatable-first-last](https://github.com/Zenysis/druid-aggregatable-first-last/tree/master/dist)
+- [druid-tuple-sketch-expansion](https://github.com/Zenysis/druid-tuple-sketch-expansion/tree/master/dist)
 
 Follow the instructions on https://druid.apache.org/docs/latest/tutorials/ to get the druid server running.
 
 Install the Zensys druid extensions following the instructs for each extension in turn:
-[druid-tuple-sketch-expansion - installation](https://github.com/Zenysis/druid-tuple-sketch-expansion?tab=readme-ov-file#installation)
-[druid-arbitrary-granularity - installation](https://github.com/Zenysis/druid-arbitrary-granularity?tab=readme-ov-file#installation)
-[druid-aggregatable-first-last - installation](https://github.com/Zenysis/druid-aggregatable-first-last?tab=readme-ov-file#installation)
-[druid-nested-json-parser - installation](https://github.com/Zenysis/druid-nested-json-parser?tab=readme-ov-file#installation)
+- [druid-tuple-sketch-expansion - installation](https://github.com/Zenysis/druid-tuple-sketch-expansion?tab=readme-ov-file#installation)
+- [druid-arbitrary-granularity - installation](https://github.com/Zenysis/druid-arbitrary-granularity?tab=readme-ov-file#installation)
+- [druid-aggregatable-first-last - installation](https://github.com/Zenysis/druid-aggregatable-first-last?tab=readme-ov-file#installation)
+- [druid-nested-json-parser - installation](https://github.com/Zenysis/druid-nested-json-parser?tab=readme-ov-file#installation)
 
-You should now be able to visit druid on http://localhost:8888/
+Upon restarting Druid you should now be able to visit druid on http://localhost:8888/ ; and succesfuly index and query data.
 
 ## Prepare an environment file for web and pipeline
 
