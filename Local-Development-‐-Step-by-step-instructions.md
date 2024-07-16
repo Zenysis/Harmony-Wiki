@@ -64,10 +64,13 @@ mc mb local/zenysis-harmony-demo/self_serve
 > [!NOTE]
 > The pipeline should run without self_serve folder present, but following the steps above removes any confusing error logs that could distract you at this point in the setup.
 
-## Prepare druid
+## Prepare Druid
 
 > [!NOTE]  
-> You don't have to use a local druid server, but these instructions assume you do. If you're not running druid locally, you'll have to do a few things differently to get indexing to work.
+> You don't have to use a local Druid server, but these instructions assume you do. If you're not running druid locally, you'll have to do a few things differently to get indexing to work.
+
+> [!CAUTION]
+> Running a local Druid server will work fine for smaller datasets, for larger datasets you may run into trouble.
 
 Create a shared &amp; data folder for druid:
 ```
@@ -76,6 +79,9 @@ mkdir -p ~/data/output
 ```
 
 ### Running druid in a container
+
+> [!NOTE]  
+> Running druid containerised on a single server has been done with mixed success.
 
 Create `druid_setup/.env` **replacing variable where appropriate**:
 ```
