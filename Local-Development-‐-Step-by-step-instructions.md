@@ -18,6 +18,18 @@ _The following ports need to be available for local development:_
 * 5432: used by postgres
 * 8080: used by hasura
 
+## Pre-requisites
+
+### Ubuntu 24.04 dev environment
+
+Install pre-requisites
+
+```bash
+sudo apt install python3-venv nodejs npm build-essential git cmake curl libtiff-dev sqlite3 wget libsqlite3-dev libcurl4-openssl-dev gcc libpq-dev libnetcdf-dev gfortran libgeos-dev libyaml-dev libffi-dev libbz2-dev apt-transport-https ca-certificates postgresql-client lz4 proj-bin libproj-dev libyaml-dev dtach jq libssl-dev liblz4-tool pigz libopenblas-dev liblapack-dev watchman vim
+
+npm install -g yarn
+```
+
 ## Clone repository
 
 Clone the [Harmony repository](https://github.com/Zenysis/Harmony):
