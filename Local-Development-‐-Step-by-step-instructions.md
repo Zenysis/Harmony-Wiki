@@ -25,7 +25,9 @@ _The following ports need to be available for local development:_
 Install pre-requisites
 
 ```bash
-sudo apt install python3-venv nodejs npm build-essential git cmake curl libtiff-dev sqlite3 wget libsqlite3-dev libcurl4-openssl-dev gcc libpq-dev libnetcdf-dev gfortran libgeos-dev libyaml-dev libffi-dev libbz2-dev apt-transport-https ca-certificates postgresql-client lz4 proj-bin libproj-dev libyaml-dev dtach jq libssl-dev liblz4-tool pigz libopenblas-dev liblapack-dev watchman vim
+sudo add-apt-repository ppa:deadsnakes/ppa
+
+sudo apt install python3.9 python3.9-venv nodejs npm build-essential git cmake curl libtiff-dev sqlite3 wget libsqlite3-dev libcurl4-openssl-dev gcc libpq-dev libnetcdf-dev gfortran libgeos-dev libyaml-dev libffi-dev libbz2-dev apt-transport-https ca-certificates postgresql-client lz4 proj-bin libproj-dev libyaml-dev dtach jq libssl-dev liblz4-tool pigz libopenblas-dev liblapack-dev watchman vim
 
 npm install -g yarn
 ```
