@@ -10,6 +10,9 @@
 - You have Docker 24.0.6 (or thereabouts) installed.
 - You're using *nix.
 
+> [!WARNING]
+> Python 3.10 and up are NOT supported at this point in time.
+
 ### Ports used
 
 _The following ports need to be available for local development:_
@@ -219,7 +222,7 @@ python -m venv venv
 ```
 
 > [!NOTE]
-> On Ubuntu 22.04 you may have to run `python3 -m venv venv`, or on 24.04 you may have to run `python3.9 -m venv venv` depending on your setup.
+> On Ubuntu you may have to run `python3.9 -m venv venv` depending on your setup.
 
 #### Activate virtual environment
 ```bash
