@@ -20,17 +20,19 @@ _The following ports need to be available for local development:_
 
 ## Pre-requisites
 
-### Ubuntu 22.04 dev environment
+### Ubuntu 22.04 (Jammy) dev environment
 
 Install pre-requisites
 
 ```bash
-sudo apt install python3 python3-dev python3-venv nodejs npm build-essential git cmake curl libtiff-dev sqlite3 wget libsqlite3-dev libcurl4-openssl-dev gcc libpq-dev libnetcdf-dev gfortran libgeos-dev libyaml-dev libffi-dev libbz2-dev apt-transport-https ca-certificates postgresql-client lz4 proj-bin libproj-dev libyaml-dev dtach jq libssl-dev liblz4-tool pigz libopenblas-dev liblapack-dev watchman vim
+sudo apt install python3 python3-dev python3-venv build-essential git cmake curl libtiff-dev sqlite3 wget libsqlite3-dev libcurl4-openssl-dev gcc libpq-dev libnetcdf-dev gfortran libgeos-dev libyaml-dev libffi-dev libbz2-dev apt-transport-https ca-certificates postgresql-client lz4 proj-bin libproj-dev libyaml-dev dtach jq libssl-dev liblz4-tool pigz libopenblas-dev liblapack-dev watchman vim
 
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+nvm install 18
 npm install -g yarn
 ```
 
-### Ubuntu 24.04 dev environment
+### Ubuntu 24.04 (Noble) dev environment
 
 Install pre-requisites
 
