@@ -212,6 +212,9 @@ OBJECT_STORAGE_ALIAS=local
 python -m venv venv
 ```
 
+> [!NOTE]
+> On Ubuntu 22.04 you may have to run `python3 -m venv venv`, or on 24.04 you may have to run `python3.9 -m venv venv` depending on your setup.
+
 #### Activate virtual environment
 ```bash
 source ./venv/bin/activate
