@@ -183,10 +183,12 @@ MAPBOX_ACCESS_TOKEN=<some mapbox access token>
 NOREPLY_EMAIL=noreply@<your domain here>
 SUPPORT_EMAIL=suppport@<your domain here>
 
-PYTHONPATH=<source folder, e.g. /Users/jimbo/Harmony>
 ZEN_HOME=<source folder, e.g. /Users/jimbo/Harmony>
-R77_SRC_ROOT=<source folder, e.g. /Users/jimbo/Harmony>
+PYTHONPATH=$ZEN_HOME
+R77_SRC_ROOT=$ZEN_HOME
+# TODO: Is one of these redundant? Why do we have two paths?
 MC_CONFIG=~/.mc
+MC_CONFIG_PATH=$MC_CONFIG
 
 POSTGRES_PASSWORD=postgres
 
