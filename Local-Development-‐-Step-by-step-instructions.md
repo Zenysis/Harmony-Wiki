@@ -42,14 +42,17 @@ sudo apt install python3.9 python3.9-dev python3.9-venv nodejs npm build-essenti
 npm install -g yarn
 ```
 
-## Clone repository
-
-Clone the [Harmony repository](https://github.com/Zenysis/Harmony):
-```
-# using SSH
+## Clone the [Harmony repository](https://github.com/Zenysis/Harmony):
+### Using SSH
+```bash
 git clone git@github.com:Zenysis/Harmony.git
-
-# change directory to the repository
+```
+### Using HTTPS
+```bash
+git clone https://github.com/Zenysis/Harmony.git
+```
+### Change directory to the repository
+```bash
 cd Harmony
 ```
 
