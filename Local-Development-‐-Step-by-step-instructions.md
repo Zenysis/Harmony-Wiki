@@ -26,9 +26,17 @@ Install pre-requisites
 
 ```bash
 sudo apt install python3 python3-dev python3-venv build-essential git cmake curl libtiff-dev sqlite3 wget libsqlite3-dev libcurl4-openssl-dev gcc libpq-dev libnetcdf-dev gfortran libgeos-dev libyaml-dev libffi-dev libbz2-dev apt-transport-https ca-certificates postgresql-client lz4 proj-bin libproj-dev libyaml-dev dtach jq libssl-dev liblz4-tool pigz libopenblas-dev liblapack-dev watchman vim
+```
 
+```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+```
+
+```bash
 nvm install 18
+```
+
+```bash
 npm install -g yarn
 ```
 
