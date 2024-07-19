@@ -193,10 +193,23 @@ OBJECT_STORAGE_ALIAS=local
 > [!WARNING]
 > Success in this section very much depends on your familiarity with working with Python. Successful installation of the dependencies relies on various pre-requisites being in place, depending on the environment you're using. (e.g. xcode command line tools on mac etc.). Instructions for configuring your particular environment falls outside the scope of this document.
 
-```
+#### Create python virtual environment
+```bash
 python -m venv venv
+```
+
+#### Activate virtual environment
+```bash
 source ./venv/bin/activate
+```
+
+#### Upgrade python package installer
+```bash
 python -m pip install --upgrade pip
+```
+
+#### Install project dependencies
+```bash
 python -m pip install -r requirements.txt -r requirements-dev.txt -r requirements-web.txt -r requirements-pipeline.txt
 ```
 
