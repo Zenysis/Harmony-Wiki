@@ -160,6 +160,9 @@ Download the most recent supported version of Druid. Refer to the dist folder in
 
 Follow the instructions on https://druid.apache.org/docs/latest/tutorials/ to get the druid server running.
 
+> [!NOTE]
+> You will need Java installed. On Ubuntu: `apt install openjdk-11-jdk`
+
 Install the Zensys druid extensions following the instructs for each extension in turn:
 - [druid-tuple-sketch-expansion - installation](https://github.com/Zenysis/druid-tuple-sketch-expansion?tab=readme-ov-file#installation)
 - [druid-arbitrary-granularity - installation](https://github.com/Zenysis/druid-arbitrary-granularity?tab=readme-ov-file#installation)
