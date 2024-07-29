@@ -239,6 +239,7 @@ python -m pip install --upgrade pip
 
 #### Install project dependencies
 ```bash
+python -m pip install wheel==0.43.0
 python -m pip install --no-build-isolation -r requirements.txt -r requirements-dev.txt -r requirements-web.txt -r requirements-pipeline.txt
 ```
 
