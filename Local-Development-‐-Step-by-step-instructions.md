@@ -290,6 +290,12 @@ source ./venv/bin/activate
 > [!NOTE]
 > You can check up on druid indexing progress on the druid console at http://localhost:8081/
 
+>[!NOTE]
+> On mac with M1 chip, there will be error related to `psycopg2`. You can resolve this by running the following command:
+ ```bash
+pip install psycopg2-binary --force-reinstall --no-cache-dir 
+ ```
+
 ### Start web server
 
 Start webpack:
